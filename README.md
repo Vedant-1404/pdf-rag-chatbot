@@ -143,7 +143,7 @@ curl -X POST http://localhost:8000/chat \
 
 1. **Ingestion**: The PDF is loaded page-by-page. Each page is split into overlapping chunks (800 chars, 150 char overlap). Overlap ensures sentences at chunk boundaries aren't cut mid-thought.
 
-2. **Embedding**: Each chunk is converted to a 1536-dimensional vector using OpenAI's `text-embedding-3-small`. Similar meaning → similar vectors (cosine similarity).
+2. **Embedding**: Each chunk is converted to a 384-dimensional vector using `all-MiniLM-L6-v2` (sentence-transformers, runs locally — no API needed).
 
 3. **Storage**: Vectors + raw text + metadata (page, filename, doc_id) stored in ChromaDB on disk.
 
