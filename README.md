@@ -139,7 +139,7 @@ curl -X POST http://localhost:8000/chat \
 
 ---
 
-## How RAG works (for interviews)
+## How RAG works
 
 1. **Ingestion**: The PDF is loaded page-by-page. Each page is split into overlapping chunks (800 chars, 150 char overlap). Overlap ensures sentences at chunk boundaries aren't cut mid-thought.
 
